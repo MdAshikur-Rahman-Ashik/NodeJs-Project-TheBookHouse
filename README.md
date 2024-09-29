@@ -16,10 +16,10 @@
   <li><strong>Clone the repository:</strong></li>
   <pre><code> https://github.com/MdAshikur-Rahman-Ashik/NodeJs-Project-TheBookHouse.git</code></pre>
   <li><strong>Navigate to the project directory:</strong></li>
-  <pre><code>cd ECommerce-Nodejs-Project</code></pre>
+  <pre><code>cd NodeJs-Project-TheBookHouse</code></pre>
   <li><strong>Install dependencies:</strong></li>
   <pre><code>npm install</code></pre>
-  <li><strong>Set up environment variables:</strong></li>
+ 
   <li><strong>Start the application:</strong></li>
   <pre><code>npm start</code></pre>
 </ol>
