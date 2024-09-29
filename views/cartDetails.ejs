@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/css/cart.css">
+<%- include("layout/head.ejs") %>
+    </head>
+
+    <body>
+        <%- include("layout/navigation.ejs") %>
+            <main>
+                <section class="home2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <h2 style="color: rgb(6, 129, 237);">Cart Details</h2>
+                                <hr />
+                                <div class="cart-details">
+                                    <div class="cart-title d-flex text-end">
+                                        <div>Book Title</div>
+                                        <div>Qunatity</div>
+                                        <div>Price</div>
+                                        <div>Total Price</div>
+                                        <div>Actions</div>
+                                    </div>
+                                    <% for(let product of cartProducts){%>
+                                        <div class="cart-product d-flex">
+                                            <div>
+                                                <%=product.title%>
+                                            </div>
+                                            <div>
+                                                <%=product.quantity%>
+                                            </div>
+                                            <div>$ <%=product.price%>
+                                            </div>
+                                            <div>$ <%=product.cartPrice%>
+                                            </div>
+                                            <div>
+                                                <form action="/cart/delete-item" method="post">
+                                                    <input type="hidden" name="productId" value="<%= product.id%>">
+                                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <%}%>
+                                            <div class="text-end">
+                                                <h3>Total Price: $ <%= totalPrice%>
+                                                </h3>
+                                            </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include("layout/footer.ejs") %>

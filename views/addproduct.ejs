@@ -1,0 +1,52 @@
+<%- include("layout/head.ejs") %>
+    </head>
+
+    <body>
+        <%- include("layout/navigation.ejs") %>
+            <main>
+                <section class="home">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                               
+                                <h2 style="color:rgb(211, 247, 5); font-size: 300%;font-weight: 500; margin-left: 30%; font-weight: 500;">
+                                    <%= edit?'Edit Product' :'Add New Book' %>
+                                </h2>
+                                <form method="POST" action="<%= edit ?'/products/edit' :'/products/add'%>">
+                                    <% if(edit){%>
+                                        <input type="hidden" name="productId" value="<%=product.id%>">
+                                        <%}%>
+                                            <p>
+                                                <label for="title">Book Title </label>
+                                                <input value="<%= edit? product.title : ''%>" type="text" name="title"
+                                                    class="form-control" />
+                                            </p>
+                                            <p>
+                                                <label for="image">Category</label>
+                                                <input value="<%= edit? product.image: ''%>" type="text" name="image"
+                                                    class="form-control" />
+                                            </p>
+                                            <p>
+                                                <label for="price">Price</label>
+                                                <input value="<%= edit? product.price: ''%>" type="number" step="any"
+                                                    name="price" class="form-control" />
+                                            </p>
+                                            <p>
+                                                <label for="description">Book Description</label>
+                                                <textarea id="description" name="description"
+                                                    class="form-control"><%= edit? product.description: ' '%></textarea>
+                                            </p>
+                                            <p>
+                                                <button class="btn btn-3">
+                                                    <%= edit?'Edit Book' :'Add Book' %>
+                                                </button>
+                                            </p>
+                                </form>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include("layout/footer.ejs") %>
